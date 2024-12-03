@@ -12,7 +12,7 @@ public class Main {
 
         reader.lines().forEach(hist_locations::add_line);
 
-        Integer result = hist_locations.distances().stream().mapToInt(Integer::intValue).sum();
+        int result = hist_locations.distances().stream().mapToInt(Integer::intValue).sum();
 
         int partTwoResult = hist_locations.similarities().stream().mapToInt(Math::toIntExact).sum();
 
