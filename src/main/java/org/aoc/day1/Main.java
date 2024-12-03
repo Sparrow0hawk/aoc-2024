@@ -14,6 +14,9 @@ public class Main {
 
         Integer result = hist_locations.distances().stream().mapToInt(Integer::intValue).sum();
 
+        int partTwoResult = hist_locations.similarities().stream().mapToInt(Math::toIntExact).sum();
+
         System.out.println("Solution for day 1 part 1: " + result);
+        System.out.println("Solution for day 1 part 2: " + partTwoResult);
     }
 }

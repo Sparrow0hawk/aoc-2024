@@ -1,7 +1,7 @@
 package org.aoc.day1;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Map;
 import java.util.Collections;
 import java.util.List;
 import java.util.Iterator;
@@ -45,4 +45,14 @@ public class HistoricalLocations {
         return locationDiff;
     }
 
+    public List<Long> similarities() {
+        Map<Integer, Long> idOccurenceCounts = listTwo.stream()
+                .collect(Collectors.groupingBy(s -> s, Collectors.counting()));
+
+
+
+        return listOne.stream().map(
+                id -> (idOccurenceCounts.containsKey(id) ? idOccurenceCounts.get(id) : 0) * id
+        ).collect(Collectors.toList());
+    }
 }
