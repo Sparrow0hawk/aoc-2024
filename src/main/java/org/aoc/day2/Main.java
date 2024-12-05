@@ -10,9 +10,9 @@ public class Main {
 
         SafetyReports safetyReports = new SafetyReports();
 
-        reader.lines().forEach(safetyReports::add_line);
+        reader.lines().forEach(safetyReports::addLine);
 
-        long partOneResult = safetyReports.total_safe();
+        long partOneResult = safetyReports.totalSafe();
 
         System.out.println("Solution for day 2 part 1: " + partOneResult);
     }

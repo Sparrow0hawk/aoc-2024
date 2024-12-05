@@ -20,9 +20,9 @@ public class TestDay2 {
 
         SafetyReports safetyReports = new SafetyReports();
 
-        test.lines().forEach(safetyReports::add_line);
+        test.lines().forEach(safetyReports::addLine);
 
-        assertEquals(2, safetyReports.total_safe());
+        assertEquals(2, safetyReports.totalSafe());
     }
 }
 

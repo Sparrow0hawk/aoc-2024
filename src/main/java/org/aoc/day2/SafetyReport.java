@@ -19,7 +19,7 @@ public class SafetyReport {
         levelChanges = changes;
     }
 
-    public boolean is_safe() {
+    public boolean isSafe() {
         HashSet<Integer> acceptable_change = new HashSet<>(Arrays.asList(1, 2, 3));
         return (levelChanges.stream().allMatch(i -> i < 0) | levelChanges.stream().allMatch(i -> i > 0)) & levelChanges.stream().allMatch(i -> acceptable_change.contains(abs(i)));
     }

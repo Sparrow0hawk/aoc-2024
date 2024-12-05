@@ -10,11 +10,11 @@ public class SafetyReports {
         safetyReports = new ArrayList<>();
     }
 
-    public void add_line(String line) {
+    public void addLine(String line) {
         safetyReports.add(new SafetyReport(line));
     }
 
-    public long total_safe() {
-        return safetyReports.stream().filter(SafetyReport::is_safe).count();
+    public long totalSafe() {
+        return safetyReports.stream().filter(SafetyReport::isSafe).count();
     }
 }
