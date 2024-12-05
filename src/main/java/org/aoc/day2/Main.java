@@ -1,7 +1,5 @@
 package org.aoc.day2;
 
-import org.aoc.day1.HistoricalLocations;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

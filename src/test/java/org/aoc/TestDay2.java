@@ -1,6 +1,5 @@
 package org.aoc;
 
-import org.aoc.day1.HistoricalLocations;
 import org.aoc.day2.SafetyReports;
 import org.junit.jupiter.api.Test;
 
