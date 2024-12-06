@@ -26,7 +26,8 @@ public class TestDay3 {
     @Test
     void testMemoryLine() {
         String line = "zmul(2,10) mul(1,3)";
-        MemoryLine memoryLine = new MemoryLine(line);
+        MemoryLine memoryLine = new MemoryLine();
+        memoryLine.parseLine(line);
 
         assertEquals(23, memoryLine.sum());
     }

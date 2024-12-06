@@ -7,7 +7,10 @@ import java.util.regex.Pattern;
 public class MemoryLine {
     List<Multiplier> multipliers;
 
-    public MemoryLine(String line) {
+    public MemoryLine() {
+    }
+
+    public void parseLine(String line) {
         Pattern mulPattern = Pattern.compile("mul\\(\\d+,\\d+\\)");
         List<String> mulStrings = mulPattern.matcher(line).results().map(MatchResult::group).toList();
         multipliers = mulStrings.stream().map(Multiplier::new).toList();

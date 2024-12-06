@@ -11,6 +11,8 @@ public class MemoryScanner {
     }
 
     public void addLine(String line) {
-        lines.add(new MemoryLine(line));
+        MemoryLine memoryLine = new MemoryLine();
+        memoryLine.parseLine(line);
+        lines.add(memoryLine);
     }
 }
