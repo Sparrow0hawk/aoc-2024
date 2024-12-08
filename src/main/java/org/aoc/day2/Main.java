@@ -13,7 +13,9 @@ public class Main {
         reader.lines().forEach(safetyReports::addLine);
 
         long partOneResult = safetyReports.totalSafe();
+        long partTwoResult = safetyReports.totalSafeWithDampener();
 
         System.out.println("Solution for day 2 part 1: " + partOneResult);
+        System.out.println("Solution for day 2 part 2: " + partTwoResult);
     }
 }

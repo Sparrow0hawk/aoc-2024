@@ -24,5 +24,23 @@ public class TestDay2 {
 
         assertEquals(2, safetyReports.totalSafe());
     }
+
+    @Test
+    void testPart2() {
+
+        String test = """
+                7 6 4 2 1
+                1 2 7 8 9
+                9 7 6 2 1
+                1 3 2 4 5
+                8 6 4 4 1
+                1 3 6 7 9""";
+
+        SafetyReports safetyReports = new SafetyReports();
+
+        test.lines().forEach(safetyReports::addLine);
+
+        assertEquals(4, safetyReports.totalSafeWithDampener());
+    }
 }
 

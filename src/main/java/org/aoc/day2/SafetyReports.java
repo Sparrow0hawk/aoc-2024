@@ -17,4 +17,8 @@ public class SafetyReports {
     public long totalSafe() {
         return safetyReports.stream().filter(SafetyReport::isSafe).count();
     }
+
+    public long totalSafeWithDampener() {
+        return safetyReports.stream().filter(SafetyReport::isSafeWithDampener).count();
+    }
 }

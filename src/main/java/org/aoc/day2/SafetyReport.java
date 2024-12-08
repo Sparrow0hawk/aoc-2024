@@ -6,9 +6,12 @@ import static java.lang.Math.abs;
 
 public class SafetyReport {
     private List<Integer> levels;
+    private HashSet<Integer> acceptableChange;
 
     public SafetyReport(String line) {
         levels = Arrays.stream(line.split("\\s+")).map(Integer::parseInt).toList();
+        acceptableChange = new HashSet<>(Arrays.asList(1, 2, 3));
+
     }
 
     private List<Integer> calculateChanges(List<Integer> levels) {
@@ -22,8 +25,19 @@ public class SafetyReport {
     }
 
     public boolean isSafe() {
-        HashSet<Integer> acceptableChange = new HashSet<>(Arrays.asList(1, 2, 3));
         List<Integer> levelChanges = this.calculateChanges(levels);
         return (levelChanges.stream().allMatch(i -> i < 0) | levelChanges.stream().allMatch(i -> i > 0)) & levelChanges.stream().allMatch(i -> acceptableChange.contains(abs(i)));
+    }
+
+    public boolean isSafeWithDampener() {
+        for (int i = 0; i < levels.size(); i++) {
+            List<Integer> levelsAdjusted = new ArrayList<>(levels);
+            levelsAdjusted.remove(i);
+            List<Integer> levelsAdjustedChanges = this.calculateChanges(levelsAdjusted);
+            if ((levelsAdjustedChanges.stream().allMatch(item -> item < 0) | levelsAdjustedChanges.stream().allMatch(item -> item > 0)) & levelsAdjustedChanges.stream().allMatch(item -> acceptableChange.contains(abs(item)))) {
+                return true;
+            }
+        }
+        return false;
     }
 }
